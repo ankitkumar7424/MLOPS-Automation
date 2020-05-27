@@ -190,3 +190,8 @@ sudo python3 /root/mlopsws/mail-code.py
 ```
 ![](MLOps-automation/job5-output.png)
   
+![](MLOps-automation/email-verification.png)
+
+# pipeline view of job 
+
+![](MLOps-automation/build-pipelineview.png)
