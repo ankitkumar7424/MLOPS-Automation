@@ -72,7 +72,7 @@ FROM MNIST-CNN.py
 
 ```
 
-After that i stsrt jenkins where i create the chain of job to run the all the processs automatically.
+After that i start jenkins where i create the chain of job to run the all the processs automatically.
 
   - Job1 : Pull  the Github repo automatically when some developers push repo to Github.
   
@@ -84,3 +84,20 @@ After that i stsrt jenkins where i create the chain of job to run the all the pr
   
   ![](MLOps-automation/job1-output.png)
 
+  - Job2 : We've to the build the our **own docker image** according the our code ( that docker image has been created by me though the **Dockerfile** inside that we've to write the all the libraries required for that code ).
+  
+  
+   ![](MLOps-automation/job2-1.png)
+   
+   ![](MLOps-automation/job2-2.png)
+   
+   ![](MLOps-automation/job2-output1.png)
+   
+   ![](MLOps-automation/job2-output2.png)
+   
+   
+ - Job3 : We've to launch the container in docker according to our CNN code.
+ 
+  ![](MLOps-automation/job3-1.png)
+  
+  ![](MLOps-automation/job3-1.png)
