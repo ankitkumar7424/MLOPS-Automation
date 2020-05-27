@@ -42,3 +42,36 @@ inside this file i used centos: latest version as my base image & install all th
 
 ![](MLOps-automation/Dockerfile.png)
 
+######  CODE For Dockerfile:
+
+```
+
+FROM centos:latest
+
+RUN yum install python36 -y 
+
+RUN pip install --upgrade pip 
+
+From tensorflow/tensorflow:latest
+
+RUN pip install numpy
+
+RUN pip install scikit-learn
+
+RUN pip imnstall matplotlib
+
+RUN pip imnstall pandas
+
+RUN pip imnstall seaborn
+
+RUN pip installl keras
+
+RUN pip imnstall pillow
+
+FROM MNIST-CNN.py
+
+```
+
+After that i stsrt jenkins where i create the chain of job to run the all the processs automatically.
+
+  - run job1
