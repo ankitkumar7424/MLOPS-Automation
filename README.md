@@ -102,26 +102,26 @@ After that i start jenkins where i create the chain of job to run the all the pr
   
   ![](MLOps-automation/job3-2.png)
 
-![](MLOps-automation/job3-output.png)
+  ![](MLOps-automation/job3-output.png)
 
  -  Job4 : We,ve to run the CNN code inside our docker & find the **Accuracy** of the model.
  
   ![](MLOps-automation/job4-1.png)
   
-   ![](MLOps-automation/job4-2.png)
+  ![](MLOps-automation/job4-2.png)
    
-   ![](MLOps-automation/job4-output.png)
+  ![](MLOps-automation/job4-output.png)
    
-    ![](MLOps-automation/job4-output2.png)
+  ![](MLOps-automation/job4-output2.png)
     
-     ![](MLOps-automation/job4-output3.png)
+  ![](MLOps-automation/job4-output3.png)
      
  -  Job5 : We,ve to send the notification to the developer if accuracy of the model is more than 80%
  
   ![](MLOps-automation/job5-1.png)
   
-   ![](MLOps-automation/job5-2.png)
+  ![](MLOps-automation/job5-2.png)
    
-    ![](MLOps-automation/job5-3.png)
+  ![](MLOps-automation/job5-3.png)
     
-   ![](MLOps-automation/job5-output.png)
+  ![](MLOps-automation/job5-output.png)
