@@ -74,4 +74,13 @@ FROM MNIST-CNN.py
 
 After that i stsrt jenkins where i create the chain of job to run the all the processs automatically.
 
-  - run job1
+  - Job1 : Pull  the Github repo automatically when some developers push repo to Github.
+  
+  ![](MLOps-automation/job1-1.png)
+  
+  ![](MLOps-automation/job1-2.png)
+  
+  ![](MLOps-automation/job1-3.png)
+  
+  ![](MLOps-automation/job1-output.png)
+
