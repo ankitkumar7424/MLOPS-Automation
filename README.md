@@ -107,28 +107,24 @@ After that i start jenkins where i create the chain of job to run the all the pr
    
    ```
    
-   ```
+  ![](MLOps-automation/job2-output1.png)
+   
+  ![](MLOps-automation/job2-output2.png)
    
    
-   ![](MLOps-automation/job2-output1.png)
-   
-   ![](MLOps-automation/job2-output2.png)
-   
-   
- - Job3 : We've to launch the container in docker according to our CNN code.
+  - Job3 : We've to launch the container in docker according to our CNN code.
  
-  ![](MLOps-automation/job3-1.png)
+   ![](MLOps-automation/job3-1.png)
   
-  ![](MLOps-automation/job3-2.png)
+   ![](MLOps-automation/job3-2.png)
   
   ```
   if sudo docker ps |grep mlops
   then 
-      echo "container already runing "
+  echo "container already runing "
   else 
-      sudo docker ps -dit -v /root/mlopsws/  --name mlops1 mlops_ws:v1
+  sudo docker ps -dit -v /root/mlopsws/  --name mlops1 mlops_ws:v1
   fi 
-  
   ```
 
   ![](MLOps-automation/job3-output.png)
@@ -142,21 +138,20 @@ After that i start jenkins where i create the chain of job to run the all the pr
   
   ``` 
   sudo docker exec mlops1 python3 MNIST-CNN.py
-  
   ```
    
-  ![](MLOps-automation/job4-output.png)
+![](MLOps-automation/job4-output.png)
    
-  ![](MLOps-automation/job4-output2.png)
+![](MLOps-automation/job4-output2.png)
     
-  ![](MLOps-automation/job4-output3.png)
+![](MLOps-automation/job4-output3.png)
      
  -  Job5 : We,ve to send the notification to the developer if accuracy of the model is more than 80%
  
   to send the mail to developer i write a code in python language for sending the mail
   
   
-  ![](MLOps-automation/mail-code.png)
+![](MLOps-automation/mail-code.png)
   
  
  ```
@@ -183,18 +178,15 @@ s.sendmail("sender's mail id", "reciever's mail id", message)
 
 s.quit()
 
-
 ```
-  ![](MLOps-automation/job5-1.png)
+![](MLOps-automation/job5-1.png)
   
-  ![](MLOps-automation/job5-2.png)
+![](MLOps-automation/job5-2.png)
    
-  ![](MLOps-automation/job5-3.png)
+![](MLOps-automation/job5-3.png)
   
-  ```
-  
-  sudo python3 /root/mlopsws/mail-code.py
-
 ```
-  ![](MLOps-automation/job5-output.png)
+sudo python3 /root/mlopsws/mail-code.py
+```
+![](MLOps-automation/job5-output.png)
   
