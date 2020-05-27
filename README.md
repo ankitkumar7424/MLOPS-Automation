@@ -82,6 +82,12 @@ After that i start jenkins where i create the chain of job to run the all the pr
   
   ![](MLOps-automation/job1-3.png)
   
+  ```
+  sudo cp -v -r -f * /root/mlopsws/
+  
+  ```
+  
+  
   ![](MLOps-automation/job1-output.png)
 
   - Job2 : We've to the build the our **own docker image** according the our code ( that docker image has been created by me though the **Dockerfile** inside that we've to write the all the libraries required for that code ).
@@ -90,6 +96,19 @@ After that i start jenkins where i create the chain of job to run the all the pr
    ![](MLOps-automation/job2-1.png)
    
    ![](MLOps-automation/job2-2.png)
+   
+   ```
+   sudo docker build -t mlops_lib:v1  /root/mlopsws/
+   if sudo docker ps -a | grep mlops
+   then docker rm -f  $(sudo docker ps -aq)
+   else
+   sudo docker run -dit --name mlops mlops_lib:v1
+   fi 
+   
+   ```
+   
+   ```
+   
    
    ![](MLOps-automation/job2-output1.png)
    
@@ -101,6 +120,16 @@ After that i start jenkins where i create the chain of job to run the all the pr
   ![](MLOps-automation/job3-1.png)
   
   ![](MLOps-automation/job3-2.png)
+  
+  ```
+  if sudo docker ps |grep mlops
+  then 
+      echo "container already runing "
+  else 
+      sudo docker ps -dit -v /root/mlopsws/  --name mlops1 mlops_ws:v1
+  fi 
+  
+  ```
 
   ![](MLOps-automation/job3-output.png)
 
@@ -109,6 +138,12 @@ After that i start jenkins where i create the chain of job to run the all the pr
   ![](MLOps-automation/job4-1.png)
   
   ![](MLOps-automation/job4-2.png)
+  
+  
+  ``` 
+  sudo docker exec mlops1 python3 MNIST-CNN.py
+  
+  ```
    
   ![](MLOps-automation/job4-output.png)
    
@@ -118,10 +153,48 @@ After that i start jenkins where i create the chain of job to run the all the pr
      
  -  Job5 : We,ve to send the notification to the developer if accuracy of the model is more than 80%
  
+  to send the mail to developer i write a code in python language for sending the mail
+  
+  
+  ![](MLOps-automation/mail-code.png)
+  
+ 
+ ```
+ 
+ #mail.py
+import smtplib 
+
+# creates SMTP session 
+s = smtplib.SMTP('smtp.gmail.com', 587) 
+
+# start TLS for security 
+s.starttls()   
+
+# Authentication 
+s.login("sender's mail id", "sender's mail id password")
+ 
+# message to be sent 
+message = "Hey Developer, Finally we got the model trained. "
+
+# sending the mail 
+
+s.sendmail("sender's mail id", "reciever's mail id", message)
+# terminating the session 
+
+s.quit()
+
+
+```
   ![](MLOps-automation/job5-1.png)
   
   ![](MLOps-automation/job5-2.png)
    
   ![](MLOps-automation/job5-3.png)
-    
+  
+  ```
+  
+  sudo python3 /root/mlopsws/mail-code.py
+
+```
   ![](MLOps-automation/job5-output.png)
+  
