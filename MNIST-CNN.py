@@ -52,7 +52,7 @@ def prep_pixels(train, test):
 # In[6]:
 
 
-# define cnn model
+# define cnn model to train the model
 def define_model():
 	model = Sequential()
 	model.add(Conv2D(32, (3, 3), activation='relu', kernel_initializer='he_uniform', input_shape=(28, 28, 1)))
