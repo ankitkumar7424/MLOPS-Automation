@@ -6,7 +6,7 @@
 
 # Project on integration of Machine Learning  with Jenkins & Docker 
 
-This project is based on the the automation of machine lerning model , when it'll be integrated with docker & jenkins. Bascially to create a machine learning model  is not a tough task as we've to run it  , or trained it & find the accuracy all these things we can find easily with the automation process. we have to only define the job in jenkins according to the our requirements & use cases.
+This project is based on the the automation of machine lerning model , when it'll be integrated with docker & jenkins. Bascially to create a machine learning model  is not a tough task as we've to run it  , or trained it & find the accuracy all these things we can find easily with the automation process. we have to only define the job in jenkins according to the our requirements & use cases.and you can make jenkins purely automatic by using the plugin of pipeline's.
 
 
 # Feature of Project
